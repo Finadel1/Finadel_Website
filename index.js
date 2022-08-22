@@ -22,6 +22,11 @@ a.config(['$stateProvider', function ($stateProvider) {
       templateUrl: 'user.html',
       controller: ''
     })
+    .state('shop', {
+      url: '/shop.html',
+      templateUrl: 'shop.html',
+      controller: ''
+    })
 
  
 }]);
@@ -146,4 +151,8 @@ a.controller("login", function ($scope, $http, $location) {
 a.controller("user", function ($scope,$http,$location){
   
 })
+a.controller("shop", function ($scope,$http,$location){
+  
+})
+
 
