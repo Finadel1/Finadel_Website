@@ -27,132 +27,200 @@ a.config(['$stateProvider', function ($stateProvider) {
       templateUrl: 'shop.html',
       controller: ''
     })
+    .state('shopk', {
+      url: '/shopkeeper_register.html',
+      templateUrl: 'shopkeeper_register.html',
+      controller: ''
+    })
+    .state('adminlogin', {
+      url: '/adminlogin.html',
+      templateUrl: 'adminlogin.html',
+      controller: ''
+    })
+    .state('vendord', {
+      url: '/vendordashboard.html',
+      templateUrl: 'vendordashboard.html',
+      controller: ''
+    })
+    .state('admin', {
+      url: '/admin.html',
+      templateUrl: 'admin.html',
+      controller: ''
+    })
 
- 
+
 }]);
 a.controller("register", function ($scope, $http, $location) {
-    $scope.pass = ""
-    $scope.cpass = ""
-    $scope.email = ""
-    $scope.user = ""
-    $scope.func = function () {
+  $scope.pass = ""
+  $scope.cpass = ""
+  $scope.email = ""
+  $scope.user = ""
+  $scope.func = function () {
 
-      var pass = $scope.pass;
+    var pass = $scope.pass;
 
-      var cpass = $scope.cpass;
-  
-      var email= $scope.email;
+    var cpass = $scope.cpass;
 
-      var user = $scope.user;
-  
-      var obj = { password: pass, username: user , email:email ,c_password:cpass }
-  
-      if (pass == "" || user == "" || email =="" || cpass =="" ) {
+    var email = $scope.email;
+
+    var user = $scope.user;
+
+    var obj = { password: pass, username: user, email: email, c_password: cpass }
+
+    if (pass == "" || user == "" || email == "" || cpass == "") {
+      swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: "Data Missing "
+      })
+      return;
+    }
+    console.log(obj);
+    $http({
+      method: "POST",
+      url: window.baseUrl + "/Finadel/registration",
+      data: JSON.stringify(obj),
+      withCredentials: true,
+
+    })
+
+      .then(function (response) {
+        console.log(response.status);
+        {
+
+          Swal.fire(
+            'Good job!',
+            'You are now logged in ',
+            'success'
+          )
+
+          $location.path("/user.html");
+
+        }
+
+
+      })
+      .catch((response) => {
+
         swal.fire({
           icon: 'error',
           title: 'Oops...',
-          text: "Data Missing "
+          text: response.data.error
         })
-        return;
-      }
-      console.log(obj);
-      $http({
-        method: "POST",
-        url: window.baseUrl + "/Finadel/registration",
-        data: JSON.stringify(obj),
-        withCredentials: true,
-  
+
+        console.log(err)
       })
-  
-        .then(function (response) {
-          console.log(response.status);
-          {
-  
-            Swal.fire(
-              'Good job!',
-              'You are now logged in ',
-              'success'
-            )
-  
-            $location.path("/user.html");
-  
-          }
-  
-  
-        })
-        .catch((response) => {
-  
-          swal.fire({
-            icon: 'error',
-            title: 'Oops...',
-            text: response.data.error
-          })
-  
-          console.log(err)
-        })
-    }
+  }
 })
 a.controller("login", function ($scope, $http, $location) {
-    $scope.pass = ""
-    $scope.user = ""
-    $scope.func = function () {
+  $scope.pass = ""
+  $scope.user = ""
+  $scope.func = function () {
 
-      var pass = $scope.pass;
-  
-      var user = $scope.user;
-  
-      var obj = { pass: pass, user: user }
-  
-      if (pass == "" || user == "") {
+    var pass = $scope.pass;
+
+    var user = $scope.user;
+
+    var obj = { pass: pass, user: user }
+
+    if (pass == "" || user == "") {
+      swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: "Data Missing "
+      })
+      return;
+    }
+    console.log(obj);
+    $http({
+      method: "POST",
+      url: window.baseUrl + "/user/login/",
+      data: JSON.stringify(obj),
+      withCredentials: true,
+
+    })
+
+      .then(function (response) {
+        console.log(response.status);
+        {
+
+          Swal.fire(
+            'Good job!',
+            'You are now logged in ',
+            'success'
+          )
+
+          $location.path("/user.html");
+
+        }
+
+
+      })
+      .catch((response) => {
+
         swal.fire({
           icon: 'error',
           title: 'Oops...',
-          text: "Data Missing "
+          text: response.data.error
         })
-        return;
-      }
-      console.log(obj);
-      $http({
-        method: "POST",
-        url: window.baseUrl + "/user/login/",
-        data: JSON.stringify(obj),
-        withCredentials: true,
-  
+
+        console.log(err)
       })
-  
-        .then(function (response) {
-          console.log(response.status);
-          {
-  
-            Swal.fire(
-              'Good job!',
-              'You are now logged in ',
-              'success'
-            )
-  
-            $location.path("/user.html");
-  
-          }
-  
-  
-        })
-        .catch((response) => {
-  
-          swal.fire({
-            icon: 'error',
-            title: 'Oops...',
-            text: response.data.error
-          })
-  
-          console.log(err)
-        })
+  }
+})
+a.controller("user", function ($scope, $http, $location) {
+
+})
+a.controller("shop", function ($scope, $http, $location) {
+
+})
+a.controller("vendordashboard", function ($scope, $http, $location) {
+
+})
+a.controller("admin", function ($scope, $http, $location) {
+
+})
+a.controller("adminlogin", function ($scope, $location) {
+  $scope.pass = ""
+  $scope.user = ""
+  $scope.func = function () {
+
+    var pass = $scope.pass;
+
+    var user = $scope.user;
+
+
+
+    if (pass == "" || user == "") {
+      swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: "Data Missing "
+      })
+
     }
-})
-a.controller("user", function ($scope,$http,$location){
-  
-})
-a.controller("shop", function ($scope,$http,$location){
-  
-})
+    $scope.p = "admin123";
+    $scope.e = "admin";
+    if ($scope.pass == $scope.p && $scope.user == $scope.e) {
+      Swal.fire(
+        'Good job!',
+        'You are now logged in ',
+        'success'
+      )
+      $location.url("/admin.html");
+      return;
+    }
+    else {
+      swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'You entered wrong email or password',
+        footer: '<a href="">Forgot Password?</a>'
+      })
+    }
 
 
+
+  }
+
+})
