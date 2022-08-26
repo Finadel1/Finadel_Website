@@ -140,6 +140,15 @@ margin-bottom: 30px;
         #imgp{
             margin-top: 10px;
         }
+        #meta{
+            background-color: black;
+            color: white;
+        }
+        #meta:hover{
+            background-color: white;
+            color: black;
+            font-size: 20px;
+        }
     </style>
 </head>
 
@@ -185,14 +194,17 @@ margin-bottom: 30px;
             <a class="nav-link" href="#">Vendors</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">Mega menu</a>
+            <a class="nav-link" href="#">Mega menu</a> 
         </li>
         <li class="nav-item">
             <a class="nav-link" href="#">Pages</a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Contact</a>
-        </li>
+        <form class="d-flex" role="search">
+   
+            <a href=""><button class="btn btn-outline-success" id="meta" type="submit">Metastore <i class="fa-solid fa-alien"></i></button></a>
+            <a href=""><button class="btn btn-outline-success" id="cart" type="submit"> Your cart <i class="fa-solid fa-cart-shopping"></i></button></a>
+            
+        </form>
     </ul>
     <hr>
 <div> 
