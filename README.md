@@ -11,7 +11,7 @@
 
 
 
-This repository contains the assets required to build the [FINADEL ](https://finadel1.github.io/Finadel_Website/) Website . 
+This repository contains the assets required to build the [ FINADEL ](https://finadel1.github.io/Finadel_Website/) Website . 
 
 
 # An overview of the website
