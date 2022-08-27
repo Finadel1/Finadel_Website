@@ -1,4 +1,5 @@
 
+
 <h1 align="center">FINADEL</h1>
 
 
@@ -9,13 +10,24 @@
 
 
 
+
 This repository contains the assets required to build the [FINADEL ](https://finadel1.github.io/Finadel_Website/) Website . 
 
 
 # An overview of the website
 
+<h3 align="center">Intro Page </h3>
+<img width="1440" alt="Intro Page" src="https://user-images.githubusercontent.com/86067292/187045982-d0ede631-0bf6-44c2-bda0-c6ef4ca64353.png">
 
-## ❤️ Thanks to all Contributors
+<h3 align="center"> User Portal </h3>
+<p align="center">
+
+<img width="500" alt="User Portal" src="https://user-images.githubusercontent.com/86067292/187046071-c6fd596b-5dd1-45c1-81c8-c85a9abdc218.png">
+<img width="500" alt="Shop" src="https://user-images.githubusercontent.com/86067292/187046057-0bcd66ad-d13b-4759-acb5-3cc2fe5eb93b.png">
+
+</p>
+
+##  Thanks to all Contributors
 
 Thanks a lot for spending your time helping us grow. Thanks a lot! Keep rocking 🍻
 
