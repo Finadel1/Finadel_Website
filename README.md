@@ -7,7 +7,7 @@
 </p>
 
 
-This repository contains the assets required to build the [FINADEL Website](https://finadel1.github.io/Finadel_Website/). We're glad that you want to contribute!
+This repository contains the assets required to build the [FINADEL Website](https://finadel1.github.io/Finadel_Website/). 
 
 
 # An overview of the website
